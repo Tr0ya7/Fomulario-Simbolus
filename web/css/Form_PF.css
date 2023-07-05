@@ -1,0 +1,107 @@
+.form {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.retangulo {
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+}
+.linha {
+    height: 10px;
+    background-color: black;
+    margin: 10px 0 0 0;
+    border-radius: 10px;
+}
+.pagina {
+    box-shadow: 0px 2px 4px rgba(0.5, 0.5, 0.5, 0.5);
+    margin: 10px 0 0 0;
+    padding: 0 0 30px 0;
+}
+.opcoes {
+    display: inline-block;
+    margin: -30px 0 0 20px;
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('//192.168.2.5/Web2/Web/fonts/Roboto-Medium.ttf') format('truetype');
+}
+l {
+    display: inline-block;
+    margin: 50px 0 0 0;
+    font-size: medium;
+}
+.hidden {
+    display: none;
+}
+button.btn {
+    margin: 10px 0 10px 875px;
+}
+.form-floating {
+    margin: 25px 0 0 0;
+}
+#form-check-label1 {
+    margin: 0 0 20px 0;
+}
+#secondCheckbox2 {
+    margin: 4px auto;
+}
+#form-check-label3 {
+    display: inline;
+}
+.checkbox1 {
+    margin: -25px 0 0 100px;
+}
+#form-check-label2 {
+    margin: 0 0 0 5px;
+}
+#form-check2 {
+    margin: 25px 0 0 0;
+    padding-left: 4px;
+}
+.Nao {
+    display: inline;
+    margin: 0 0 0 95px;
+}
+.Nao input.form-check-input {
+    margin-left: 100px;
+}
+#Sim {
+    margin: 0 0 0 -110px;
+}
+#testemunha_reu {
+    margin: 0 0 0 10px;
+}
+#text-p5 {
+    margin: 25px 0 0 0;
+    padding-left: 4px;
+}
+.secondCheckboxContainer_ {
+    margin: 15px 0 0 0;
+}
+#form-id {
+    padding-left: 4px;
+}
+div#form-check2[name="form-id"] {
+    padding-left: 4px;
+}
+label {
+    font-size: small;
+    font-weight: unset;
+}
+.form-floating .form-control {
+    font-size: initial;
+}
+.form-floating>label {
+    margin-top: -4px;
+}
+.titulo-form {
+    margin: 0 5px 15px 10px;
+    font-weight: 495;
+    font-size: x-large;
+}
+.form-check-input[type=radio] {
+    height: 13px;
+    width: 13px;
+}
