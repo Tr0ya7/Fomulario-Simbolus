@@ -1,5 +1,5 @@
 <?php
-    require_once "topo.php";
+    require_once "topo_sem_link.php";
 ?>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <?php
@@ -55,11 +55,11 @@
     $que_6_texto, $que_7_1, $que_7_natureza, $que_7_parte, $que_7_aberto, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_texto, $que_9_1, $que_9_2, 
     $que_9_texto, $que_10_1, $que_10_texto, $que_11_1, $que_11_texto, $que_12_texto);
 
-    if ($conclui >= 1) {
+    /*if ($conclui >= 1) {
         echo "Salvo";
     } else {
         echo "Erro ao inserir o questionário PF." . mysqli_error($conexao);
-    }
+    }*/
   } else {
       $que_1_2 = '0';
       $que_1_3 = '0';
@@ -108,7 +108,7 @@
             <form method="post" action="Form_PF.php">
               <div class="form">
                 <div class="titulo-form">
-                  Auto Declarção Compilance
+                  Auto Declaração Compliance
                 </div>
                 <!--
                 <div class="container1">
@@ -118,7 +118,7 @@
                 -->
                 <div class="pagina">
                       <div class="opcoes">
-                          <l>Você já teve envolvimento em alguma queixa ou processo ambiental?</l><br>
+                          <l>1. Você já teve envolvimento em alguma queixa ou processo ambiental?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_1_1" value="1" id="pro1" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_1_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro1" id="Sim">
@@ -173,7 +173,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já teve envolvimento em alguma queixa ou processo ambiental?</l><br>
+                          <l>2. Você já teve envolvimento em alguma queixa ou processo ambiental?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_2_1" value="1" id="pro2" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_2_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro2" id="Sim">
@@ -211,7 +211,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Alguma empresa em que trabalhou já teve algum problema de vazamento de dados pessoais?</l><br>
+                          <l>3. Alguma empresa em que trabalhou já teve algum problema de vazamento de dados pessoais?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_3_1" value="1" id="pro3" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_3_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro3" id="Sim">
@@ -266,7 +266,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já teve envolvimento em alguma queixa ou processo referente a atos inapropriados na internet?</l><br>
+                          <l>4. Você já teve envolvimento em alguma queixa ou processo referente a atos inapropriados na internet?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_4_1" value="1" id="pro4" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_4_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro4" id="Sim">
@@ -304,7 +304,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já se envolveu em alguma queixa ou processo cível?</l><br>
+                          <l>5. Você já se envolveu em alguma queixa ou processo cível?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_5_1" value="1" id="pro5" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_5_1 == 'true') { echo ''; } ?>>
                               <label class="form-check-label" for="pro5" id="Sim">
@@ -373,7 +373,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já se envolveu em alguma queixa ou processo criminal?</l><br>
+                          <l>6. Você já se envolveu em alguma queixa ou processo criminal?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_6_1" value="1" id="pro6" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_6_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro5" id="Sim">
@@ -442,7 +442,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já se envolveu em alguma queixa ou processo trabalhista?</l><br>
+                          <l>7. Você já se envolveu em alguma queixa ou processo trabalhista?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_7_1" value="1" id="pro7" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_7_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro7" id="Sim">
@@ -511,7 +511,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Alguma empresa em que trabalhou já teve algum problema de suborno ou sonegação?</l><br>
+                          <l>8. Alguma empresa em que trabalhou já teve algum problema de suborno ou sonegação?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_8_1" value="1" id="pro8" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_8_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro8" id="Sim">
@@ -566,7 +566,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já teve envolvimento em alguma queixa ou processo referente a atos suborno ou sonegação?</l><br>
+                          <l>9. Você já teve envolvimento em alguma queixa ou processo referente a atos suborno ou sonegação?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_9_1" value="1" id="pro9" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_9_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro9" id="Sim">
@@ -604,7 +604,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário<br> FR-CQC-006 - Grupo de Clientes.</l><br>
+                          <l>10. Você já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário<br> FR-CQC-006 - Grupo de Clientes.</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_10_1" value="1" id="pro10" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_10_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro10" id="Sim">
@@ -623,7 +623,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>Você possui algum grau de parentesco com o autor, ou parte adversa de algum processo que irá atuar em nome<br> do ABG?</l><br>
+                          <l>11. Você possui algum grau de parentesco com o autor, ou parte adversa de algum processo que irá atuar em nome<br> do ABG?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_11_1" value="1" id="pro11" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_11_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro11" id="Sim">
@@ -642,17 +642,17 @@
                                 </div>
                               </div>
                             </div>
-                          <l for="10">Esclareça alguma outra situação em que passou que possa futuramente ser vinculada a imagem da empresa:</l><br>
+                          <l for="10">12. Esclareça alguma outra situação em que passou que possa futuramente ser vinculada a imagem da empresa:</l><br>
                           <div class="form-floating">
                               <textarea class="form-control" type="text" name="que_12_texto" value="<?php echo $que_12_texto; ?>" placeholder="." id="floatingTextarea12" style="height: 100px; width: 850px;"></textarea>
                               <label for="floatingTextarea2">Comente sobre</label>
                           </div>
                       </div>
             </div>
-            <form method="post" action="#">
-              <button type="submit" class="btn btn-success" name="enviar" onclick="return verificarCampos()">Enviar</button>
+            <form method="post" action="index.php">
+              <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos(event)">Enviar</button>
             </form>
-        </div>  
+        </div>
         </body>
       </form>
     </form>

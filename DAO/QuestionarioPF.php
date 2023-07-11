@@ -48,7 +48,7 @@
 			$sql = $sql . "'{$que_6_natureza}', '{$que_6_parte}', '{$que_6_aberto}', '{$que_6_texto}', '{$que_7_1}', '{$que_7_natureza}', '{$que_7_parte}', '{$que_7_aberto}', ";
 			$sql = $sql . "'{$que_7_texto}', '{$que_8_1}', '{$que_8_2}', '{$que_8_3}', '{$que_8_texto}', '{$que_9_1}', '{$que_9_2}', '{$que_9_texto}', '{$que_10_1}', "; 
 			$sql = $sql . "'{$que_10_texto}', '{$que_11_1}', '{$que_11_texto}', '{$que_12_texto}'); ";
-			echo $sql;
+
 	        $query = $this->conn->GetQuery($sql);
 	        if (!$this->conn->GetQuery($sql, $trasanc))
 	        {
