@@ -18,9 +18,6 @@ function limparCampos() {
   var natureza5 = document.getElementById('natureza5');
   var N6 = document.getElementById('N6');
   var textarea6 = document.getElementById('floatingTextarea6');
-  var subCheckboxInputs7 = document.querySelectorAll('.secondCheckboxContainer_7 input[type="radio"]');
-  var N7 = document.getElementById('N7');
-  var textarea7 = document.getElementById('floatingTextarea7');
   var subCheckboxInputs8 = document.querySelectorAll('.secondCheckboxContainer_8 input[type="radio"]');
   var N8 = document.getElementById('N8');
   var textarea8 = document.getElementById('floatingTextarea8');
@@ -70,12 +67,7 @@ function limparCampos() {
     textarea6.value = '';
   } 
   
-  if (N7.checked) {
-    for (var i = 0; i < subCheckboxInputs7.length; i++) {
-      subCheckboxInputs7[i].checked = false;
-    }
-    textarea7.value = '';
-  }
+
   
   if (N8.checked) {
     for (var i = 0; i < subCheckboxInputs8.length; i++) {
@@ -106,8 +98,6 @@ function showSecondCheckbox() {
     var secondCheckboxContainer5 = document.getElementById("secondCheckboxContainer5");
     var checkbox5 = document.getElementById("pro5");
     var secondCheckboxContainer5 = document.getElementById("secondCheckboxContainer5");
-    var checkbox7 = document.getElementById("pro7");
-    var secondCheckboxContainer7 = document.getElementById("secondCheckboxContainer7");
     var checkbox8 = document.getElementById("pro8");
     var secondCheckboxContainer8 = document.getElementById("secondCheckboxContainer8");
     
@@ -141,12 +131,6 @@ function showSecondCheckbox() {
         secondCheckboxContainer5.style.display = "none";
     }
 
-    if (checkbox7.checked) {
-        secondCheckboxContainer7.style.display = "block";
-    } else {
-        secondCheckboxContainer7.style.display = "none";
-    }
-
     if (checkbox8.checked) {
         secondCheckboxContainer8.style.display = "block";
     } else {
@@ -169,8 +153,6 @@ function showHideTextBox() {
     var caixaTexto5_1 = document.getElementById("caixa-texto-pro5_1");
     var checkbox6 = document.getElementById("pro6");
     var caixaTexto6 = document.getElementById("caixa-texto-pro6");
-    var checkbox7 = document.getElementById("pro7");
-    var caixaTexto7 = document.getElementById("caixa-texto-pro7");
     var checkbox8 = document.getElementById("pro8");
     var caixaTexto8 = document.getElementById("caixa-texto-pro8");
     var checkbox9 = document.getElementById("pro9");
@@ -218,12 +200,6 @@ function showHideTextBox() {
         caixaTexto6.classList.add("hidden");
     }
 
-    if (checkbox7.checked) {
-        caixaTexto7.classList.remove("hidden");
-    } else {
-        caixaTexto7.classList.add("hidden");
-    }
-
     if (checkbox8.checked) {
         caixaTexto8.classList.remove("hidden");
     } else {
@@ -263,9 +239,6 @@ function hideElements(id) {
     var caixaTexto5_1 = document.getElementById("caixa-texto-pro5_1");
     var checkbox6 = document.getElementById("N6");
     var caixaTexto6 = document.getElementById("caixa-texto-pro6");
-    var checkbox7 = document.getElementById("N7");
-    var secondCheckboxContainer7 = document.getElementById("secondCheckboxContainer7");
-    var caixaTexto7 = document.getElementById("caixa-texto-pro7");
     var checkbox8 = document.getElementById("N8");
     var secondCheckboxContainer8 = document.getElementById("secondCheckboxContainer8");
     var caixaTexto8 = document.getElementById("caixa-texto-pro8");
@@ -301,10 +274,6 @@ function hideElements(id) {
     } else if (id === "N6") {
         checkbox6.checked = "true";
         caixaTexto6.classList.add("hidden");
-    } else if (id === "N7") {
-        checkbox7.checked = "true";
-        secondCheckboxContainer7.style.display = "none";
-        caixaTexto7.classList.add("hidden");
     } else if (id === "N8") {
         checkbox8.checked = "true";
         secondCheckboxContainer8.style.display = "none";
@@ -321,7 +290,7 @@ function hideElements(id) {
     }
 }
 
-function verificarCampos() {
+function verificarCampos(event) {
     var checkboxSim = document.getElementById("pro1");
     var checkboxNao = document.getElementById("N1");
     var caixaTexto = document.getElementById("floatingTextarea1");
@@ -350,13 +319,16 @@ function verificarCampos() {
     var checkboxNao6 = document.getElementById("N6");
     var caixaTexto6 = document.getElementById("floatingTextarea6");
     var caixasTexto6 = document.querySelectorAll("[id^='floatingTextarea']");
-    var checkboxSim7 = document.getElementById("pro7");
-    var checkboxNao7 = document.getElementById("N7");
     var checkbox_7_2 = document.getElementById ("secondCheckbox_7_2");
+    var checkbox_7_2_1 = document.getElementById ("secondCheckbox_7_2_1");
     var checkbox_7_3 = document.getElementById ("secondCheckbox_7_3");
+    var checkbox_7_3_1 = document.getElementById ("secondCheckbox_7_3_1");
     var checkbox_7_4 = document.getElementById ("secondCheckbox_7_4");
+    var checkbox_7_4_1 = document.getElementById ("secondCheckbox_7_4_1");
     var checkbox_7_5 = document.getElementById ("secondCheckbox_7_5");
+    var checkbox_7_5_1 = document.getElementById ("secondCheckbox_7_5_1");
     var checkbox_7_6 = document.getElementById ("secondCheckbox_7_6");
+    var checkbox_7_6_1 = document.getElementById ("secondCheckbox_7_6_1");
     var caixaTexto7 = document.getElementById("floatingTextarea7");
     var caixasTexto7 = document.querySelectorAll("[id^='floatingTextarea']");
     var checkboxSim8 = document.getElementById("pro8");
@@ -381,11 +353,15 @@ function verificarCampos() {
     var caixasTexto10 = document.querySelectorAll("[id^='floatingTextarea']");
     var caixaTexto11 = document.getElementById("floatingTextarea11");
     var caixasTexto11 = document.querySelectorAll("[id^='floatingTextarea']");
+    var redirecionar = true;
+
+    event.preventDefault();
 
     if (!checkboxSim.checked && !checkboxNao.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim.checked && checkboxNao.checked) {
+      redirecionar = true;
       return true;
     }  else if (checkboxSim.checked && !document.querySelector('input[name="que_1_2"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
@@ -398,7 +374,7 @@ function verificarCampos() {
       return false;
     }
   
-    var textoPreenchido = false;
+    textoPreenchido = false;
   
     for (var i = 0; i < caixasTexto.length; i++) {
       if (caixasTexto[i].value.trim() !== "") {
@@ -415,9 +391,10 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim2.checked && checkboxNao2.checked) {
+      redirecionar = true;
       return true;
     }  else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_2"]:checked')) {
-      alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      alert("Por favor, não deixe nenhuma opção sem ser selecionada.");  
       return false;
     } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_3"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
@@ -427,7 +404,7 @@ function verificarCampos() {
       return false;
     }
     
-      var textoPreenchido2 = false;
+      textoPreenchido2 = false;
     
     for (var i = 0; i < caixasTexto2.length; i++) {
       if (caixasTexto2[i].value.trim() !== "") {
@@ -444,6 +421,7 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim3.checked && checkboxNao3.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_2"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
@@ -456,7 +434,7 @@ function verificarCampos() {
       return false;
     }
     
-    var textoPreenchido3 = false;
+    textoPreenchido3 = false;
     
     for (var i = 0; i < caixasTexto3.length; i++) {
       if (caixasTexto3[i].value.trim() !== "") {
@@ -473,6 +451,7 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim4.checked && checkboxNao4.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim4.checked && caixaTextoNatureza4[0].value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
@@ -488,7 +467,7 @@ function verificarCampos() {
       return false;
     }
     
-    var textoPreenchido4 = false;
+    textoPreenchido4 = false;
     
     for (var i = 0; i < caixasTexto4.length; i++) {
       if (caixasTexto4[i].value.trim() !== "") {
@@ -506,6 +485,7 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim5.checked && checkboxNao5.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim5.checked && caixaTextoNatureza5[0].value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
@@ -521,7 +501,7 @@ function verificarCampos() {
       return false;
     }
     
-    var textoPreenchido5 = false;
+    textoPreenchido5 = false;
     
     for (var i = 0; i < caixasTexto5.length; i++) {
       if (caixasTexto5[i].value.trim() !== "") {
@@ -537,15 +517,17 @@ function verificarCampos() {
       
     if (!checkboxSim6.checked && !checkboxNao6.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada");
+      
       return false;
     } else if (checkboxSim6.checked && checkboxNao6.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim6.checked && caixaTexto6.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
   
-    var textoPreenchido6 = false;
+    textoPreenchido6 = false;
 
     for (var i = 0; i < caixasTexto6.length; i++) {
       if (caixasTexto6[i].value.trim() !== "") {
@@ -557,33 +539,28 @@ function verificarCampos() {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
-    // parte errada ///////////////////////////////////////////////////
-    if (!checkboxSim7.checked && !checkboxNao7.checked) {
+
+    if (!checkbox_7_2.checked && !checkbox_7_2_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
-    } else if (checkboxSim7.checked && checkboxNao7.checked) {
-      return true;
-    } else if (checkboxSim7.checked && !checkbox_7_2.checked) {
+    } else if (!checkbox_7_3.checked && !checkbox_7_3_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
-    } else if (checkboxSim7.checked && !checkbox_7_3.checked) {
+    } else if (!checkbox_7_4.checked && !checkbox_7_4_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
-    } else if (checkboxSim7.checked && !checkbox_7_4.checked) {
+    } else if (!checkbox_7_5.checked && !checkbox_7_5_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
-    } else if (checkboxSim7.checked && !checkbox_7_5.checked) {
+    } else if (!checkbox_7_6.checked && !checkbox_7_6_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
-    } else if (checkboxSim7.checked && !checkbox_7_6.checked) {
-      alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-      return false;
-    } else if (checkboxSim7.checked && caixaTexto7.value.trim() === "") {
+    } else if (caixaTexto7.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
     
-    var textoPreenchido7 = false;
+    textoPreenchido7 = false;
 
     for (var i = 0; i < caixasTexto7.length; i++) {
       if (caixasTexto7[i].value.trim() !== "") {
@@ -591,7 +568,7 @@ function verificarCampos() {
         break;
       }
     }
-    if (!textoPreenchido7 && !checkboxNao7.checked) {
+    if (!textoPreenchido7) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
@@ -600,6 +577,7 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim8.checked && checkboxNao8.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim8.checked && !checkbox_8_2.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
@@ -630,7 +608,7 @@ function verificarCampos() {
       return false;
     }
     
-    var textoPreenchido8 = false;
+    textoPreenchido8 = false;
 
     for (var i = 0; i < caixasTexto8.length; i++) {
       if (caixasTexto8[i].value.trim() !== "") {
@@ -642,18 +620,19 @@ function verificarCampos() {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
-    ////////////////////////////////////////////////////////////////////
+
     if (!checkboxSim9.checked && !checkboxNao9.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim9.checked && checkboxNao9.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim9.checked && caixaTexto9.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
   
-    var textoPreenchido9 = false;
+    textoPreenchido9 = false;
   
     for (var i = 0; i < caixasTexto9.length; i++) {
       if (caixasTexto9[i].value.trim() !== "") {
@@ -670,13 +649,14 @@ function verificarCampos() {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
       return false;
     } else if (checkboxSim10.checked && checkboxNao10.checked) {
+      redirecionar = true;
       return true;
     } else if (checkboxSim10.checked && caixaTexto10.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
       return false;
     }
   
-    var textoPreenchido10 = false;
+    textoPreenchido10 = false;
   
     for (var i = 0; i < caixasTexto10.length; i++) {
       if (caixasTexto10[i].value.trim() !== "") {
@@ -694,7 +674,7 @@ function verificarCampos() {
       return false;
     }
 
-    var textoPreenchido11 = false;
+    textoPreenchido11 = false;
 
     for (var i = 0; i < caixasTexto11.length; i++) {
       if (caixasTexto11[i].value.trim() !== "") {
@@ -707,5 +687,9 @@ function verificarCampos() {
       return false;
     }
 
-    return true; 
+    if (redirecionar) {
+      window.location.href = "index.php";
+    }
+
+    return redirecionar 
 }

@@ -30,7 +30,6 @@
     $que_5_texto = isset($_POST["que_5_texto"]) && !empty($_POST["que_5_texto"]) ? $_POST["que_5_texto"] : 'nda';
     $que_6_1 = $_POST["que_6_1"];
     $que_6_texto = isset($_POST["que_6_texto"]) && !empty($_POST["que_6_texto"]) ? $_POST["que_6_texto"] : 'nda';
-    $que_7_1 = $_POST["que_7_1"];
     $que_7_2 = isset($_POST["que_7_2"]) && !empty($_POST["que_7_2"]) ? $_POST["que_7_2"] : '0';
     $que_7_3 = isset($_POST["que_7_3"]) && !empty($_POST["que_7_3"]) ? $_POST["que_7_3"] : '0';
     $que_7_4 = isset($_POST["que_7_4"]) && !empty($_POST["que_7_4"]) ? $_POST["que_7_4"] : '0';
@@ -57,7 +56,7 @@
 
     $conclui = $questionarioPJDAO->inserirQuestionario($que_1_1, $que_1_2, $que_1_3, $que_1_texto, $que_2_1, $que_2_2, $que_2_3, $que_2_texto, $que_3_1, $que_3_2, $que_3_3, $que_3_texto, 
     $que_4_1, $que_4_natureza, $que_4_parte, $que_4_decisao, $que_4_texto, $que_5_1, $que_5_natureza, $que_5_parte, $que_5_decisao, $que_5_texto, $que_6_1, $que_6_texto,
-    $que_7_1, $que_7_2, $que_7_3, $que_7_4, $que_7_5, $que_7_6, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_4, $que_8_5, $que_8_6, $que_8_7, $que_8_8, $que_8_9, 
+    $que_7_2, $que_7_3, $que_7_4, $que_7_5, $que_7_6, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_4, $que_8_5, $que_8_6, $que_8_7, $que_8_8, $que_8_9, 
     $que_8_texto, $que_9_1, $que_9_texto, $que_10_1, $que_10_texto, $que_11_texto);
 
     if ($conclui >= 1) {
@@ -454,17 +453,7 @@
                               </div>                          
                             <l>7. Algum sócio, associado, terceirizado ou colaborador da empresa é atuante como ou possui algum grau de parentesco com algum superior?</l><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="que_7_1" value="1" id="pro7" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_7_1 == '1') { echo ''; } ?>>
-                                <label class="form-check-label" for="pro7" id="Sim">
-                                    Sim
-                                </label>
-                                <div class="Nao">
-                                    <input class="form-check-input" type="radio" name="que_7_1" value="0" id="N7" onclick="hideElements('N7'); limparCampos()" <?php if ($que_7_1 == '0') { echo ''; } ?>>
-                                    <label class="form-check-label" for="N7">
-                                        Não
-                                    </label><br>
-                                </div>
-                                <div class="secondCheckboxContainer_7" id="secondCheckboxContainer7" style="display: none;">
+                                <div class="secondCheckboxContainer_7" id="secondCheckboxContainer7">
                                     <div class="form-check" id="text-p5">
                                         <label class="form-check-label" for="secondCheckbox">
                                             Executivo ou financeiro de algum setor ou departamento do governo?
@@ -476,7 +465,7 @@
                                             Sim
                                         </label>
                                         <div class="checkbox1">
-                                            <input class="form-check-input" type="radio" name="que_7_2" value="0" id="secondCheckbox_7_2" <?php if ($que_7_2 == '0') { echo ''; } ?>>
+                                            <input class="form-check-input" type="radio" name="que_7_2" value="0" id="secondCheckbox_7_2_1" <?php if ($que_7_2 == '0') { echo ''; } ?>>
                                             <label id="form-check-label2" class="form-check-label" for="secondCheckbox_7_2">
                                                 Não
                                             </label><br>
@@ -493,7 +482,7 @@
                                             Sim
                                         </label>
                                         <div class="checkbox1">
-                                            <input class="form-check-input" type="radio" name="que_7_3" value="0" id="secondCheckbox_7_3" <?php if ($que_7_3 == '0') { echo ''; } ?>>
+                                            <input class="form-check-input" type="radio" name="que_7_3" value="0" id="secondCheckbox_7_3_1" <?php if ($que_7_3 == '0') { echo ''; } ?>>
                                             <label id="form-check-label2" class="form-check-label" for="secondCheckbox_7_3">
                                                 Não
                                             </label><br>
@@ -510,7 +499,7 @@
                                             Sim
                                         </label>
                                         <div class="checkbox1">
-                                            <input class="form-check-input" type="radio" name="que_7_4" value="0" id="secondCheckbox_7_4" <?php if ($que_7_4 == '0') { echo ''; } ?>>
+                                            <input class="form-check-input" type="radio" name="que_7_4" value="0" id="secondCheckbox_7_4_1" <?php if ($que_7_4 == '0') { echo ''; } ?>>
                                             <label id="form-check-label2" class="form-check-label" for="secondCheckbox_7_4">
                                                 Não
                                             </label><br>
@@ -527,7 +516,7 @@
                                             Sim
                                         </label>
                                         <div class="checkbox1">
-                                            <input class="form-check-input" type="radio" name="que_7_5" value="0" id="secondCheckbox_7_5" <?php if ($que_7_5 == '0') { echo ''; } ?>>
+                                            <input class="form-check-input" type="radio" name="que_7_5" value="0" id="secondCheckbox_7_5_1" <?php if ($que_7_5 == '0') { echo ''; } ?>>
                                             <label id="form-check-label2" class="form-check-label" for="secondCheckbox_7_5">
                                                 Não
                                             </label><br>
@@ -544,14 +533,14 @@
                                             Sim
                                         </label>
                                         <div class="checkbox1">
-                                            <input class="form-check-input" type="radio" name="que_7_6" value="0" id="secondCheckbox_7_6" <?php if ($que_7_6 == '0') { echo ''; } ?>>
+                                            <input class="form-check-input" type="radio" name="que_7_6" value="0" id="secondCheckbox_7_6_1" <?php if ($que_7_6 == '0') { echo ''; } ?>>
                                             <label id="form-check-label2" class="form-check-label" for="secondCheckbox_7_6">
                                                 Não
                                             </label><br>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="caixa-texto-pro7" class="hidden">
+                                <div id="caixa-texto-pro7">
                                     <div class="form-floating">
                                         <textarea class="form-control" name="que_7_texto" placeholder="." value="<?php echo $que_7_texto; ?>" id="floatingTextarea7" style="height: 100px; width: 850px;"></textarea>
                                         <label for="floatingTextarea2">Esclareça</label>
@@ -715,7 +704,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <l>9. Algum sócio, associado, terceirizado ou colaborador da empresa já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário FR-CQC-006 - Grupo de Clientes.?</l><br>
+                            <l>9. Algum sócio, associado, terceirizado ou colaborador da empresa já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário  <a href="GRUPOS_DE_CLIENTES.pdf" target="_blank">FR-CQC-006 - Grupo de Clientes.</a>?</l><br>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="que_9_1" value="1" id="pro9" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_9_1 == '1') { echo ''; } ?>>
                                 <label class="form-check-label" for="pro9" id="Sim">
@@ -753,7 +742,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <l for="10">11. Esclareça alguma outra situação em que a empresa tenha passado e que possa futuramente ser vinculada a imagem da<br> ABG:</l><br>
+                            <l for="10">11. Esclareça alguma outra situação em que a empresa tenha passado e que possa futuramente ser vinculada a<br> imagem da ABG:</l><br>
                             <div class="form-floating">
                                 <textarea class="form-control" name="que_11_texto" placeholder="." value="<?php echo $que_11_texto; ?>" id="floatingTextarea11" style="height: 100px; width: 850px;"></textarea>
                             </div>

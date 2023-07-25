@@ -49,8 +49,8 @@
 			$sql = $sql . "'{$que_5_parte}', '{$que_5_decisao}', '{$que_5_texto}', '{$que_6_1}', '{$que_6_texto}', '{$que_7_1}', '{$que_7_2}', '{$que_7_3}', '{$que_7_4}', ";
 			$sql = $sql . "'{$que_7_5}', '{$que_7_6}', '{$que_7_texto}', '{$que_8_1}', '{$que_8_2}', '{$que_8_3}', '{$que_8_4}', '{$que_8_5}', '{$que_8_6}', '{$que_8_7}', ";
 			$sql = $sql . "'{$que_8_8}', '{$que_8_9}', '{$que_8_texto}', '{$que_9_1}', '{$que_9_texto}', '{$que_10_1}', '{$que_10_texto}', '{$que_11_texto}'); ";
-			echo $sql;
-	        $query = $this->conn->GetQuery($sql);
+
+			$query = $this->conn->GetQuery($sql);
 	        if (!$this->conn->GetQuery($sql, $trasanc))
 	        {
 	            $this->conn->Rollback($trasanc);

@@ -381,7 +381,7 @@ function hideElements(id) {
     }
 }
 
-function verificarCampos() {
+function verificarCampos(event) {
     var checkboxSim = document.getElementById("pro1");
     var checkboxNao = document.getElementById("N1");
     var caixaTexto = document.getElementById("floatingTextarea1");
@@ -400,19 +400,19 @@ function verificarCampos() {
     var caixasTexto4 = document.querySelectorAll("[id^='floatingTextarea']");
     var checkboxSim5 = document.getElementById("pro5");
     var checkboxNao5 = document.getElementById("N5");
-    var caixaTextoNatureza5 = document.querySelectorAll("[id^='floatingTextarea_5']");
+    var caixaTextoNatureza5 = document.querySelectorAll("[id^='natureza5']");
     var checkboxAberto5 = document.querySelector('input[name="que_5_aberto"]:checked');
     var caixaTexto5 = document.getElementById("floatingTextarea5");
     var caixasTexto5 = document.querySelectorAll("[id^='floatingTextarea']");
     var checkboxSim6 = document.getElementById("pro6");
     var checkboxNao6 = document.getElementById("N6");
-    var caixaTextoNatureza6 = document.querySelectorAll("[id^='floatingTextarea_6']");
+    var caixaTextoNatureza6 = document.querySelectorAll("[id^='natureza6']");
     var checkboxAberto6 = document.querySelector('input[name="que_6_aberto"]:checked');
     var caixaTexto6 = document.getElementById("floatingTextarea6");
     var caixasTexto6 = document.querySelectorAll("[id^='floatingTextarea']");
     var checkboxSim7 = document.getElementById("pro7");
     var checkboxNao7 = document.getElementById("N7");
-    var caixaTextoNatureza7 = document.querySelectorAll("[id^='floatingTextarea_7']");
+    var caixaTextoNatureza7 = document.querySelectorAll("[id^='natureza7']");
     var checkboxAberto7 = document.querySelector('input[name="que_7_aberto"]:checked');
     var caixaTexto7 = document.getElementById("floatingTextarea7");
     var caixasTexto7 = document.querySelectorAll("[id^='floatingTextarea']");
@@ -434,6 +434,9 @@ function verificarCampos() {
     var caixasTexto11 = document.querySelectorAll("[id^='floatingTextarea']");
     var caixaTexto12 = document.getElementById("floatingTextarea12");
     var caixasTexto12 = document.querySelectorAll("[id^='floatingTextarea']");
+    var redirecionar = true;
+
+    event.preventDefault();
 
     if (!checkboxSim.checked && !checkboxNao.checked) {
         alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
@@ -443,7 +446,7 @@ function verificarCampos() {
       } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_1"]:checked')) {
         alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
         return false;
-      } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_2"]:checked')) {
+      } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_3"]:checked')) {
         alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
         return false;
       } else if (checkboxSim.checked && caixaTexto.value.trim() === "") {
@@ -602,7 +605,7 @@ function verificarCampos() {
         alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
         return false;
       } else if (checkboxSim6.checked && caixaTexto6.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
+        alert("Por favor, insir um texto antes de enviar o formulário.");
         return false;
       }
       
@@ -718,12 +721,13 @@ function verificarCampos() {
         alert("Por favor, não deixe nenhuma opção sem ser selecionada");
         return false;
       } else if (checkboxSim10.checked && checkboxNao10.checked) {
+        
         return true;
       } else if (checkboxSim10.checked && caixaTexto10.value.trim() === "") {
         alert("Por favor, insira um texto antes de enviar o formulário.");
         return false;
       }
-    
+
       var textoPreenchido10 = false;
 
       for (var i = 0; i < caixasTexto10.length; i++) {
@@ -733,7 +737,7 @@ function verificarCampos() {
         }
       }
       if (!textoPreenchido10) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
+        alert("Por favor, insir um texto antes de enviar o formulário.");
         return false;
       }
 
@@ -778,5 +782,9 @@ function verificarCampos() {
         return false;
       }
 
-    return true;
+      if (redirecionar) {
+        window.location.href = "index.php";
+      }
+   
+    return redirecionar
 }

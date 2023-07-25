@@ -118,7 +118,7 @@
                 -->
                 <div class="pagina">
                       <div class="opcoes">
-                          <l>1. Você já teve envolvimento em alguma queixa ou processo ambiental?</l><br>
+                          <l>1. Alguma empresa em que trabalhou já teve algum problema ambiental?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_1_1" value="1" id="pro1" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_1_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro1" id="Sim">
@@ -604,7 +604,7 @@
                                 </div>
                               </div>
                             </div>
-                          <l>10. Você já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário<br> FR-CQC-006 - Grupo de Clientes.</l><br>
+                          <l>10. Você já atuou ou atua contra o Cliente da operação contratante ou algum Cliente do ABG? Conforme formulário<br> <a href="GRUPOS_DE_CLIENTES.pdf" target="_blank">FR-CQC-006 - Grupo de Clientes.</a>?</l><br>
                           <div class="form-check">
                               <input class="form-check-input" type="radio" name="que_10_1" value="1" id="pro10" onclick="showSecondCheckbox()" onchange="showHideTextBox()" <?php if ($que_10_1 == '1') { echo ''; } ?>>
                               <label class="form-check-label" for="pro10" id="Sim">
