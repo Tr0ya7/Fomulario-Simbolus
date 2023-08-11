@@ -30,6 +30,7 @@
     $que_5_texto = isset($_POST["que_5_texto"]) && !empty($_POST["que_5_texto"]) ? $_POST["que_5_texto"] : 'nda';
     $que_6_1 = $_POST["que_6_1"];
     $que_6_texto = isset($_POST["que_6_texto"]) && !empty($_POST["que_6_texto"]) ? $_POST["que_6_texto"] : 'nda';
+    $que_7_1 = isset($_POST["que_7_1"]) && !empty($_POST["que_7_1"]) ? $_POST["que_7_1"] : '0';
     $que_7_2 = isset($_POST["que_7_2"]) && !empty($_POST["que_7_2"]) ? $_POST["que_7_2"] : '0';
     $que_7_3 = isset($_POST["que_7_3"]) && !empty($_POST["que_7_3"]) ? $_POST["que_7_3"] : '0';
     $que_7_4 = isset($_POST["que_7_4"]) && !empty($_POST["que_7_4"]) ? $_POST["que_7_4"] : '0';
@@ -56,13 +57,14 @@
 
     $conclui = $questionarioPJDAO->inserirQuestionario($que_1_1, $que_1_2, $que_1_3, $que_1_texto, $que_2_1, $que_2_2, $que_2_3, $que_2_texto, $que_3_1, $que_3_2, $que_3_3, $que_3_texto, 
     $que_4_1, $que_4_natureza, $que_4_parte, $que_4_decisao, $que_4_texto, $que_5_1, $que_5_natureza, $que_5_parte, $que_5_decisao, $que_5_texto, $que_6_1, $que_6_texto,
-    $que_7_2, $que_7_3, $que_7_4, $que_7_5, $que_7_6, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_4, $que_8_5, $que_8_6, $que_8_7, $que_8_8, $que_8_9, 
+    $que_7_1, $que_7_2, $que_7_3, $que_7_4, $que_7_5, $que_7_6, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_4, $que_8_5, $que_8_6, $que_8_7, $que_8_8, $que_8_9, 
     $que_8_texto, $que_9_1, $que_9_texto, $que_10_1, $que_10_texto, $que_11_texto);
 
     if ($conclui >= 1) {
-        echo "Salvo";
+      echo '<script>window.location.href = "index.php";</script>';
+      exit;
     } else {
-        echo "Erro ao inserir o questionário PF." . mysqli_error($conexao);
+      echo '<script>alert("Erro");</script>';
     }
   } else {
       $que_1_2 = '0';
@@ -83,6 +85,7 @@
       $que_5_decisao = '0';
       $que_5_texto = 'nda';
       $que_6_texto = 'nda';
+      $que_7_1 = '0';
       $que_7_2 = '0';
       $que_7_3 = '0';
       $que_7_4 = '0';
@@ -116,6 +119,7 @@
         <script src="js/Form_pj.js"></script>
         <form method="post" action="  ">
           <form method="post" action="../DAO/QuestionarioPJ.php">
+          <form name="form" method="post" action="index.php">
             <div class="form">
               <div class="titulo-form">
                 Auto Declaração Compliance
@@ -749,8 +753,9 @@
                         </div>
                     </form>
                 </div>
-                  <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos(event)">Enviar</button>
+                  <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos()">Enviar</button>
             </div>  
+          </form>
           </form>
         </form>
     </body>

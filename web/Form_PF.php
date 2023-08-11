@@ -55,11 +55,13 @@
     $que_6_texto, $que_7_1, $que_7_natureza, $que_7_parte, $que_7_aberto, $que_7_texto, $que_8_1, $que_8_2, $que_8_3, $que_8_texto, $que_9_1, $que_9_2, 
     $que_9_texto, $que_10_1, $que_10_texto, $que_11_1, $que_11_texto, $que_12_texto);
 
-    /*if ($conclui >= 1) {
-        echo "Salvo";
+    if ($conclui >= 1) {
+      echo '<script>window.location.href = "index.php";</script>';
+      exit;
     } else {
-        echo "Erro ao inserir o questionário PF." . mysqli_error($conexao);
-    }*/
+      echo '<script>alert("Erro");</script>';
+    }
+
   } else {
       $que_1_2 = '0';
       $que_1_3 = '0';
@@ -105,7 +107,7 @@
         <script src="js\Form_PF.js"></script>
         <form method="post" action="  ">
           <form method="post" action="../DAO/QuestionarioPF.php">
-            <form method="post" action="Form_PF.php">
+            <form name="form" method="post" action="index.php">
               <div class="form">
                 <div class="titulo-form">
                   Auto Declaração Compliance
@@ -650,13 +652,13 @@
                       </div>
             </div>
             <form method="post" action="index.php">
-              <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos(event)">Enviar</button>
+                <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos()">Enviar</button>
             </form>
         </div>
-        </body>
-      </form>
-    </form>
   </form>
+  </form>
+  </form>
+        </body>
 </html>
 
 <div class="hr-line-dashed col-sm-12"></div>
