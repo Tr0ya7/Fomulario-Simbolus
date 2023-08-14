@@ -32,8 +32,8 @@
 	            $Questionario = new QuestionarioPF();
 	            $Questionario->setQueCodigo($row->QUE_CODIGO);
 	            $questionarios[] = $Questionario;
-	        }        
-	        return $questionarios;   
+	        }
+	        return $questionarios;
 	    }
 
 	    // insert questionario
@@ -50,11 +50,7 @@
 			$sql = $sql . "'{$que_10_texto}', '{$que_11_1}', '{$que_11_texto}', '{$que_12_texto}'); ";
 
 	        $query = $this->conn->GetQuery($sql);
-	        if (!$this->conn->GetQuery($sql, $trasanc))
-	        {
-	            $this->conn->Rollback($trasanc);
-	            return false;
-	        }
+
 	        return true;
 	    }
 

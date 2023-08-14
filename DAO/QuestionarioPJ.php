@@ -51,11 +51,7 @@
 			$sql = $sql . "'{$que_8_8}', '{$que_8_9}', '{$que_8_texto}', '{$que_9_1}', '{$que_9_texto}', '{$que_10_1}', '{$que_10_texto}', '{$que_11_texto}'); ";
 
 			$query = $this->conn->GetQuery($sql);
-	        if (!$this->conn->GetQuery($sql, $trasanc))
-	        {
-	            $this->conn->Rollback($trasanc);
-	            return false;
-	        }
+
 	        return true;
 	    }
 
