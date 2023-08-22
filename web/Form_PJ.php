@@ -753,7 +753,7 @@
                         </div>
                     </form>
                 </div>
-                  <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos()">Enviar</button>
+                  <button type="submit" class="btn btn-success" name="enviar" onclick="verificarCampos(event)">Enviar</button>
             </div>  
           </form>
           </form>
