@@ -355,22 +355,24 @@ function verificarCampos(event) {
     var caixasTexto11 = document.querySelectorAll("[id^='floatingTextarea']");
     var redirecionar = true;
 
-    event.preventDefault();
-
     if (!checkboxSim.checked && !checkboxNao.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim.checked && checkboxNao.checked) {
       redirecionar = true;
       return true;
     }  else if (checkboxSim.checked && !document.querySelector('input[name="que_1_2"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_3"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim.checked && caixaTexto.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
   
@@ -384,23 +386,28 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido && !checkboxNao.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim2.checked && !checkboxNao2.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim2.checked && checkboxNao2.checked) {
       redirecionar = true;
       return true;
     }  else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_2"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");  
+      event.preventDefault();
       return false;
     } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_3"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim2.checked && caixaTexto2.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -414,23 +421,28 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido2 && !checkboxNao2.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim3.checked && !checkboxNao3.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim3.checked && checkboxNao3.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_2"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_3"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim3.checked && caixaTexto3.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -444,26 +456,32 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido3 && !checkboxNao3.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim4.checked && !checkboxNao4.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim4.checked && checkboxNao4.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim4.checked && caixaTextoNatureza4[0].value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim4.checked && !document.querySelector('input[name="que_4_parte"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim4.checked && !checkboxDecisao4) {
       alert("Por favor, não deixe nenhuma a sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim4.checked && caixaTexto4.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -478,26 +496,32 @@ function verificarCampos(event) {
       
     if (!textoPreenchido4 && !checkboxNao4.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim5.checked && !checkboxNao5.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim5.checked && checkboxNao5.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim5.checked && caixaTextoNatureza5[0].value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim5.checked && !document.querySelector('input[name="que_5_parte"]:checked')) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim5.checked && !checkboxDecisao5) {
       alert("Por favor, não deixe nenhuma a sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim5.checked && caixaTexto5.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -512,18 +536,20 @@ function verificarCampos(event) {
     
     if (!textoPreenchido5 && !checkboxNao5.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
       
     if (!checkboxSim6.checked && !checkboxNao6.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada");
-      
+      event.preventDefault();
       return false;
     } else if (checkboxSim6.checked && checkboxNao6.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim6.checked && caixaTexto6.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
   
@@ -537,26 +563,33 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido6 && !checkboxNao6.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkbox_7_2.checked && !checkbox_7_2_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (!checkbox_7_3.checked && !checkbox_7_3_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (!checkbox_7_4.checked && !checkbox_7_4_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (!checkbox_7_5.checked && !checkbox_7_5_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (!checkbox_7_6.checked && !checkbox_7_6_1.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (caixaTexto7.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -570,41 +603,52 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido7) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim8.checked && !checkboxNao8.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && checkboxNao8.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim8.checked && !checkbox_8_2.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_3.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_4.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_5.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_6.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_7.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_8.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && !checkbox_8_9.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim8.checked && caixaTexto8.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
     
@@ -618,17 +662,20 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido8 && !checkboxNao8.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim9.checked && !checkboxNao9.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim9.checked && checkboxNao9.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim9.checked && caixaTexto9.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
   
@@ -642,17 +689,20 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido9 && !checkboxNao9.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (!checkboxSim10.checked && !checkboxNao10.checked) {
       alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+      event.preventDefault();
       return false;
     } else if (checkboxSim10.checked && checkboxNao10.checked) {
       redirecionar = true;
       return true;
     } else if (checkboxSim10.checked && caixaTexto10.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
   
@@ -666,11 +716,13 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido10 && !checkboxNao10.checked) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
     if (caixaTexto11.value.trim() === "") {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 
@@ -684,6 +736,7 @@ function verificarCampos(event) {
     }
     if (!textoPreenchido11) {
       alert("Por favor, insira um texto antes de enviar o formulário.");
+      event.preventDefault();
       return false;
     }
 

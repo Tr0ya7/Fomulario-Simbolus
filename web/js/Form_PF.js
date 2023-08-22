@@ -401,7 +401,7 @@ function verificarCampos(event) {
     var checkboxSim5 = document.getElementById("pro5");
     var checkboxNao5 = document.getElementById("N5");
     var caixaTextoNatureza5 = document.querySelectorAll("[id^='natureza5']");
-    var checkboxAberto5 = document.querySelector('input[name="que_5_aberto"]:checked');
+    var checkboxAberto5 = document.querySelector('input[id="que_5_aberto"]:checked');
     var caixaTexto5 = document.getElementById("floatingTextarea5");
     var caixasTexto5 = document.querySelectorAll("[id^='floatingTextarea']");
     var checkboxSim6 = document.getElementById("pro6");
@@ -436,355 +436,411 @@ function verificarCampos(event) {
     var caixasTexto12 = document.querySelectorAll("[id^='floatingTextarea']");
     var redirecionar = true;
 
-    event.preventDefault();
-
-    if (!checkboxSim.checked && !checkboxNao.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim.checked && checkboxNao.checked) {
-        return true;
-      } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_3"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim.checked && caixaTexto.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido = false;
-
-      for (var i = 0; i < caixasTexto.length; i++) {
-        if (caixasTexto[i].value.trim() !== "") {
-          textoPreenchido = true;
-          break;
+      if (!checkboxSim.checked && !checkboxNao.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim.checked && checkboxNao.checked) {
+          return true;
+        } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim.checked && !document.querySelector('input[name="que_1_3"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim.checked && caixaTexto.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
+      
+        var textoPreenchido = false;
 
-      if (!checkboxSim2.checked && !checkboxNao2.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim2.checked && checkboxNao2.checked) {
-        return true;
-      } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_2"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim2.checked && caixaTexto2.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido2 = false;
-
-      for (var i = 0; i < caixasTexto2.length; i++) {
-        if (caixasTexto2[i].value.trim() !== "") {
-          textoPreenchido2 = true;
-          break;
+        for (var i = 0; i < caixasTexto.length; i++) {
+          if (caixasTexto[i].value.trim() !== "") {
+            textoPreenchido = true;
+            break;
+          }
         }
-      }
-      if (!textoPreenchido2) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      if (!checkboxSim3.checked && !checkboxNao3.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim3.checked && checkboxNao3.checked) {
-        return true;
-      } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_2"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_3"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim3.checked && caixaTexto3.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido3 = false;
-
-      for (var i = 0; i < caixasTexto3.length; i++) {
-        if (caixasTexto3[i].value.trim() !== "") {
-          textoPreenchido3 = true;
-          break;
+        if (!textoPreenchido) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido3) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
 
-      if (!checkboxSim4.checked && !checkboxNao4.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim4.checked && checkboxNao4.checked) {
-        return true;
-      } else if (checkboxSim4.checked && !document.querySelector('input[name="que_4_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim4.checked && !document.querySelector('input[name="que_4_2"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim4.checked && caixaTexto4.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido4 = false;
-
-      for (var i = 0; i < caixasTexto4.length; i++) {
-        if (caixasTexto4[i].value.trim() !== "") {
-          textoPreenchido4 = true;
-          break;
+        if (!checkboxSim2.checked && !checkboxNao2.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim2.checked && checkboxNao2.checked) {
+          return true;
+        } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim2.checked && !document.querySelector('input[name="que_2_2"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim2.checked && caixaTexto2.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido4) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
+      
+        var textoPreenchido2 = false;
 
-      if (!checkboxSim5.checked && !checkboxNao5.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim5.checked && checkboxNao5.checked) {
-        return true;
-      } else if (checkboxSim5.checked && caixaTextoNatureza5[0].value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      } else if (checkboxSim5.checked && !document.querySelector('input[name="que_5_parte"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim5.checked && !checkboxAberto5) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim5.checked && caixaTexto5.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-      
-      var textoPreenchido5 = false;
-      
-      for (var i = 0; i < caixasTexto5.length; i++) {
-        if (caixasTexto5[i].value.trim() !== "") {
-          textoPreenchido5 = true;
-          break;
+        for (var i = 0; i < caixasTexto2.length; i++) {
+          if (caixasTexto2[i].value.trim() !== "") {
+            textoPreenchido2 = true;
+            break;
+          }
         }
-      }
-      
-      if (!textoPreenchido5) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      if (!checkboxSim6.checked && !checkboxNao6.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim6.checked && checkboxNao6.checked) {
-        return true;
-      } else if (checkboxSim6.checked && caixaTextoNatureza6[0].value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      } else if (checkboxSim6.checked && !document.querySelector('input[name="que_6_parte"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim6.checked && !checkboxAberto6) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim6.checked && caixaTexto6.value.trim() === "") {
-        alert("Por favor, insir um texto antes de enviar o formulário.");
-        return false;
-      }
-      
-      var textoPreenchido6 = false;
-      
-      for (var i = 0; i < caixasTexto6.length; i++) {
-        if (caixasTexto6[i].value.trim() !== "") {
-          textoPreenchido6 = true;
-          break;
+        if (!textoPreenchido2) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      
-      if (!textoPreenchido6) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
 
-      if (!checkboxSim7.checked && !checkboxNao7.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim7.checked && checkboxNao7.checked) {
-        return true;
-      } else if (checkboxSim7.checked && caixaTextoNatureza7[0].value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      } else if (checkboxSim7.checked && !document.querySelector('input[name="que_7_parte"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim7.checked && !checkboxAberto7) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim7.checked && caixaTexto7.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-      
-      var textoPreenchido7 = false;
-      
-      for (var i = 0; i < caixasTexto7.length; i++) {
-        if (caixasTexto7[i].value.trim() !== "") {
-          textoPreenchido7 = true;
-          break;
+        if (!checkboxSim3.checked && !checkboxNao3.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim3.checked && checkboxNao3.checked) {
+          return true;
+        } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_2"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim3.checked && !document.querySelector('input[name="que_3_3"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim3.checked && caixaTexto3.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
       
-      if (!textoPreenchido7) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
+        var textoPreenchido3 = false;
 
-      if (!checkboxSim8.checked && !checkboxNao8.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim8.checked && checkboxNao8.checked) {
-        return true;
-      } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_2"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_3"]:checked')) {
-        alert("PPor favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim8.checked && caixaTexto8.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido8 = false;
-
-      for (var i = 0; i < caixasTexto8.length; i++) {
-        if (caixasTexto8[i].value.trim() !== "") {
-          textoPreenchido8 = true;
-          break;
+        for (var i = 0; i < caixasTexto3.length; i++) {
+          if (caixasTexto3[i].value.trim() !== "") {
+            textoPreenchido3 = true;
+            break;
+          }
         }
-      }
-      if (!textoPreenchido8) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      if (!checkboxSim9.checked && !checkboxNao9.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim9.checked && checkboxNao9.checked) {
-        return true;
-      } else if (checkboxSim9.checked && !document.querySelector('input[name="que_9_1"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim9.checked && !document.querySelector('input[name="que_9_2"]:checked')) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim9.checked && caixaTexto9.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido9 = false;
-
-      for (var i = 0; i < caixasTexto9.length; i++) {
-        if (caixasTexto9[i].value.trim() !== "") {
-          textoPreenchido9 = true;
-          break;
+        if (!textoPreenchido3) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido9) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
 
-      if (!checkboxSim10.checked && !checkboxNao10.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada");
-        return false;
-      } else if (checkboxSim10.checked && checkboxNao10.checked) {
+        if (!checkboxSim4.checked && !checkboxNao4.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim4.checked && checkboxNao4.checked) {
+          return true;
+        } else if (checkboxSim4.checked && !document.querySelector('input[name="que_4_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim4.checked && !document.querySelector('input[name="que_4_2"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim4.checked && caixaTexto4.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+      
+        var textoPreenchido4 = false;
+
+        for (var i = 0; i < caixasTexto4.length; i++) {
+          if (caixasTexto4[i].value.trim() !== "") {
+            textoPreenchido4 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido4) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (!checkboxSim5.checked && !checkboxNao5.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim5.checked && checkboxNao5.checked) {
+          return true;
+        } else if (checkboxSim5.checked && caixaTextoNatureza5[0].value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim5.checked && !document.querySelector('input[name="que_5_parte"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim5.checked && !checkboxAberto5) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim5.checked && caixaTexto5.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
         
-        return true;
-      } else if (checkboxSim10.checked && caixaTexto10.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      var textoPreenchido10 = false;
-
-      for (var i = 0; i < caixasTexto10.length; i++) {
-        if (caixasTexto10[i].value.trim() !== "") {
-          textoPreenchido10 = true;
-          break;
+        var textoPreenchido5 = false;
+        
+        for (var i = 0; i < caixasTexto5.length; i++) {
+          if (caixasTexto5[i].value.trim() !== "") {
+            textoPreenchido5 = true;
+            break;
+          }
         }
-      }
-      if (!textoPreenchido10) {
-        alert("Por favor, insir um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      if (!checkboxSim11.checked && !checkboxNao11.checked) {
-        alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
-        return false;
-      } else if (checkboxSim11.checked && checkboxNao11.checked) {
-        return true;
-      } else if (checkboxSim11.checked && caixaTexto11.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-    
-      var textoPreenchido11 = false;
-
-      for (var i = 0; i < caixasTexto11.length; i++) {
-        if (caixasTexto11[i].value.trim() !== "") {
-          textoPreenchido11 = true;
-          break;
+        
+        if (!textoPreenchido5) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido11) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
 
-      if (caixaTexto12.value.trim() === "") {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
-
-      var textoPreenchido12 = false;
-
-      for (var i = 0; i < caixasTexto12.length; i++) {
-        if (caixasTexto12[i].value.trim() !== "") {
-          textoPreenchido12 = true;
-          break;
+        if (!checkboxSim6.checked && !checkboxNao6.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim6.checked && checkboxNao6.checked) {
+          return true;
+        } else if (checkboxSim6.checked && caixaTextoNatureza6[0].value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim6.checked && !document.querySelector('input[name="que_6_parte"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim6.checked && !checkboxAberto6) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim6.checked && caixaTexto6.value.trim() === "") {
+          alert("Por favor, insir um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
         }
-      }
-      if (!textoPreenchido12) {
-        alert("Por favor, insira um texto antes de enviar o formulário.");
-        return false;
-      }
+        
+        var textoPreenchido6 = false;
+        
+        for (var i = 0; i < caixasTexto6.length; i++) {
+          if (caixasTexto6[i].value.trim() !== "") {
+            textoPreenchido6 = true;
+            break;
+          }
+        }
+        
+        if (!textoPreenchido6) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
 
-      if (redirecionar) {
-        window.location.href = "index.php";
-      }
-   
-    return redirecionar
+        if (!checkboxSim7.checked && !checkboxNao7.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim7.checked && checkboxNao7.checked) {
+          return true;
+        } else if (checkboxSim7.checked && caixaTextoNatureza7[0].value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim7.checked && !document.querySelector('input[name="que_7_parte"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim7.checked && !checkboxAberto7) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim7.checked && caixaTexto7.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+        
+        var textoPreenchido7 = false;
+        
+        for (var i = 0; i < caixasTexto7.length; i++) {
+          if (caixasTexto7[i].value.trim() !== "") {
+            textoPreenchido7 = true;
+            break;
+          }
+        }
+        
+        if (!textoPreenchido7) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (!checkboxSim8.checked && !checkboxNao8.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim8.checked && checkboxNao8.checked) {
+          return true;
+        } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_2"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim8.checked && !document.querySelector('input[name="que_8_3"]:checked')) {
+          alert("PPor favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim8.checked && caixaTexto8.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+      
+        var textoPreenchido8 = false;
+
+        for (var i = 0; i < caixasTexto8.length; i++) {
+          if (caixasTexto8[i].value.trim() !== "") {
+            textoPreenchido8 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido8) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (!checkboxSim9.checked && !checkboxNao9.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim9.checked && checkboxNao9.checked) {
+          return true;
+        } else if (checkboxSim9.checked && !document.querySelector('input[name="que_9_1"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim9.checked && !document.querySelector('input[name="que_9_2"]:checked')) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim9.checked && caixaTexto9.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+      
+        var textoPreenchido9 = false;
+
+        for (var i = 0; i < caixasTexto9.length; i++) {
+          if (caixasTexto9[i].value.trim() !== "") {
+            textoPreenchido9 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido9) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (!checkboxSim10.checked && !checkboxNao10.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim10.checked && checkboxNao10.checked) {
+          
+          return true;
+        } else if (checkboxSim10.checked && caixaTexto10.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        var textoPreenchido10 = false;
+
+        for (var i = 0; i < caixasTexto10.length; i++) {
+          if (caixasTexto10[i].value.trim() !== "") {
+            textoPreenchido10 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido10) {
+          alert("Por favor, insir um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (!checkboxSim11.checked && !checkboxNao11.checked) {
+          alert("Por favor, não deixe nenhuma opção sem ser selecionada.");
+          event.preventDefault();
+          return false;
+        } else if (checkboxSim11.checked && checkboxNao11.checked) {
+          return true;
+        } else if (checkboxSim11.checked && caixaTexto11.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+      
+        var textoPreenchido11 = false;
+
+        for (var i = 0; i < caixasTexto11.length; i++) {
+          if (caixasTexto11[i].value.trim() !== "") {
+            textoPreenchido11 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido11) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (caixaTexto12.value.trim() === "") {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        var textoPreenchido12 = false;
+
+        for (var i = 0; i < caixasTexto12.length; i++) {
+          if (caixasTexto12[i].value.trim() !== "") {
+            textoPreenchido12 = true;
+            break;
+          }
+        }
+        if (!textoPreenchido12) {
+          alert("Por favor, insira um texto antes de enviar o formulário.");
+          event.preventDefault();
+          return false;
+        }
+
+        if (redirecionar) {
+          window.location.href = "index.php";
+        }
+
+      return redirecionar;
 }
